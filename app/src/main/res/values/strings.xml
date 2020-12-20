@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">AndroidBasicLevel</string>
+    <string name="city">City</string>
+    <string name="today">Today</string>
+    <string name="_4_c">-4 °C</string>
+    <string name="cloudy">Cloudy</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="todayDate">TodayDate</string>
+    <string name="tomorrowDate">TomorrowDate</string>
+    <string name="imageTomorrow" translatable="false">imageTomorrow</string>
+    <string name="imageToday" translatable="false">imageToday</string>
+    <string name="sunny">Sunny</string>
 </resources>

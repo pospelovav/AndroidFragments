@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidBasicLevel</string>
+    <string name="city">Город</string>
+    <string name="today">Сегодня</string>
+    <string name="_4_c">-4 °C</string>
+    <string name="cloudy">Облачно</string>
+    <string name="tomorrow">Завтра</string>
+    <string name="todayDate">TodayDate</string>
+    <string name="tomorrowDate">TomorrowDate</string>
+    <string name="sunny">Солнечно</string>
+</resources>

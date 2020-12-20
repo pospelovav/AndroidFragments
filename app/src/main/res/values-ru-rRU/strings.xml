@@ -3,7 +3,7 @@
     <string name="app_name">AndroidBasicLevel</string>
     <string name="city">Город</string>
     <string name="today">Сегодня</string>
-    <string name="_4_c">-4 °C</string>
+    <string name="degrees">градусы</string>
     <string name="cloudy">Облачно</string>
     <string name="tomorrow">Завтра</string>
     <string name="todayDate">TodayDate</string>

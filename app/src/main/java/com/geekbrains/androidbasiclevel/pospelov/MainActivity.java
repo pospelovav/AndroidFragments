@@ -21,17 +21,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView city = findViewById(R.id.city);
-        city.setText("Moscow");
-        TextView textTempToday = findViewById(R.id.textTempToday);
+        TextView textTempToday = findViewById(R.id.textTempTodayView);
         textTempToday.setText("-4 °C");
-        TextView textTempTomorrow = findViewById(R.id.textTempTomorrow);
+        TextView textTempTomorrow = findViewById(R.id.textTempTomorrowView);
         textTempTomorrow.setText("0 °C");
-        TextView textTodayDate = findViewById(R.id.textTodayDate);
+        TextView textTodayDate = findViewById(R.id.textTodayDateView);
         Calendar today = new GregorianCalendar();
         DateFormat df = new SimpleDateFormat("E, dd MMM yyy");
         textTodayDate.setText(df.format(today.getTime()));
-        TextView textTomorrowDate = findViewById(R.id.textTomorrowDate);
+        TextView textTomorrowDate = findViewById(R.id.textTomorrowDateView);
         today.roll(Calendar.DAY_OF_MONTH, +1);
         textTomorrowDate.setText(df.format(today.getTime()));
 

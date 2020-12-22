@@ -10,4 +10,6 @@
     <string name="tomorrowDate">TomorrowDate</string>
     <string name="sunny">Солнечно</string>
     <string name="button">Н</string>
+    <string name="settings_activity">Настройки</string>
+    <string name="button_select">ВЫБРАТЬ</string>
 </resources>

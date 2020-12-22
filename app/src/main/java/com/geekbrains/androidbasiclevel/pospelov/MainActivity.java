@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-
+import android.view.View.OnClickListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     @SuppressLint("WrongConstant")
     @Override
@@ -33,5 +36,21 @@ public class MainActivity extends AppCompatActivity {
         today.roll(Calendar.DAY_OF_MONTH, +1);
         textTomorrowDate.setText(df.format(today.getTime()));
 
+        Button btnSettings;
+        btnSettings = (Button) findViewById(R.id.buttonSettings);
+        btnSettings.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.buttonSettings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
     }
 }

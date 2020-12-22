@@ -9,4 +9,5 @@
     <string name="todayDate">TodayDate</string>
     <string name="tomorrowDate">TomorrowDate</string>
     <string name="sunny">Солнечно</string>
+    <string name="button">Н</string>
 </resources>

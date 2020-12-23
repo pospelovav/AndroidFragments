@@ -12,4 +12,16 @@
     <string name="button">Н</string>
     <string name="settings_activity">Настройки</string>
     <string name="button_select">ВЫБРАТЬ</string>
+    <string name="checkbox_wind_speed">Скорость Ветра</string>
+    <string name="checkbox_atmospheric_pressure">Атмосферное давление</string>
+    <string-array name="city_array">
+        <item>Нью-Йорк</item>
+        <item>Москва</item>
+        <item>Париж</item>
+        <item>Берлин</item>
+        <item>Гонконг</item>
+        <item>Лондон</item>
+        <item>Рим</item>
+        <item>Токио</item>
+    </string-array>
 </resources>

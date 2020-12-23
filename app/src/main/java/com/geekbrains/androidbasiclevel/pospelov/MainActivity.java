@@ -2,7 +2,6 @@ package com.geekbrains.androidbasiclevel.pospelov;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,11 +15,11 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
-
     @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -39,6 +38,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         Button btnSettings;
         btnSettings = (Button) findViewById(R.id.buttonSettings);
         btnSettings.setOnClickListener(this);
+
+        String[] citys = getResources().getStringArray(R.array.city_array);
+        TextView textViewCity = findViewById(R.id.cityView);
+        textViewCity.setText(citys[2]);
 
     }
 

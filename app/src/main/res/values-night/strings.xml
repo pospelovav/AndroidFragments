@@ -3,4 +3,6 @@
     <string name="button">Button</string>
     <string name="settings_activity">Settings</string>
     <string name="button_select">Select</string>
+    <string name="checkbox_wind_speed">Wind Speed</string>
+    <string name="checkbox_atmospheric_pressure">Atmospheric Pressure</string>
 </resources>

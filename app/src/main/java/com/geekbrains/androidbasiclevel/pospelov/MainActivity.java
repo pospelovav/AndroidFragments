@@ -2,6 +2,7 @@ package com.geekbrains.androidbasiclevel.pospelov;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,10 +16,18 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
-    @SuppressLint("WrongConstant")
+    public static String theme = "LIGHT";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        switch (theme) {
+            case "DARK":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+            case "LIGHT":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -39,12 +48,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         btnSettings = (Button) findViewById(R.id.buttonSettings);
         btnSettings.setOnClickListener(this);
 
-        String[] citys = getResources().getStringArray(R.array.city_array);
         TextView textViewCity = findViewById(R.id.cityView);
-        textViewCity.setText(citys[2]);
+        Bundle cityName = getIntent().getExtras();
+        if(cityName != null){
+            textViewCity.setText(cityName.get("city").toString());
+        } else {
+            String[] citys = getResources().getStringArray(R.array.city_array);
+            textViewCity.setText(citys[2]);
+        }
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

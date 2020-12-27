@@ -10,11 +10,14 @@
     <string name="imageTomorrow" translatable="false">imageTomorrow</string>
     <string name="imageToday" translatable="false">imageToday</string>
     <string name="sunny">Sunny</string>
-    <string name="button">S</string>
     <string name="settings_activity">Settings</string>
     <string name="button_select">Select</string>
     <string name="checkbox_wind_speed">Wind Speed</string>
     <string name="checkbox_atmospheric_pressure">Atmospheric Pressure</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="textCitySettingsView">Select Your City</string>
+    <string name="buttonDarkText">Change to Dark Theme</string>
+    <string name="buttonLightText">Change to Light Theme</string>
     <string-array name="city_array">
         <item>New York</item>
         <item>Moscow</item>

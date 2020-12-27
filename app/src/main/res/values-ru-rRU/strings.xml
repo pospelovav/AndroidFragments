@@ -9,11 +9,13 @@
     <string name="todayDate">TodayDate</string>
     <string name="tomorrowDate">TomorrowDate</string>
     <string name="sunny">Солнечно</string>
-    <string name="button">Н</string>
     <string name="settings_activity">Настройки</string>
     <string name="button_select">ВЫБРАТЬ</string>
     <string name="checkbox_wind_speed">Скорость Ветра</string>
     <string name="checkbox_atmospheric_pressure">Атмосферное давление</string>
+    <string name="textCitySettingsView">Выберите Ваш город</string>
+    <string name="buttonDarkText">Выбрать Темную тему</string>
+    <string name="buttonLightText">Выбрать Светлую тему</string>
     <string-array name="city_array">
         <item>Нью-Йорк</item>
         <item>Москва</item>

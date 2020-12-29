@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             textViewCity.setText(cityName.get("city").toString());
         } else {
             String[] citys = getResources().getStringArray(R.array.city_array);
-            textViewCity.setText(citys[2]);
+            textViewCity.setText(citys[0]);
         }
 
     }

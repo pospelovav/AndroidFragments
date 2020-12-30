@@ -1,5 +1,6 @@
 package com.geekbrains.androidbasiclevel.pospelov;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -35,6 +36,57 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             btnTheme.setText(getString(R.string.buttonLightText));
         }
         btnTheme.setOnClickListener(this);
+
+        String instanceState;
+        if (savedInstanceState == null){
+            instanceState = "Fist start SettingsActivity";
+        }
+        else{
+            instanceState = "Restart SettingsActivity";
+        }
+        Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Toast.makeText(getApplicationContext(), "SettingsActivity onRestoreInstanceState()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(getApplicationContext(), "SettingsActivity onStop()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(getApplicationContext(), "SettingsActivity onResume()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(getApplicationContext(), "SettingsActivity onPause()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Toast.makeText(getApplicationContext(), "SettingsActivity onSaveInstanceState()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(getApplicationContext(), "SettingsActivity onRestart()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(getApplicationContext(), "SettingsActivity onDestroy()", Toast.LENGTH_SHORT).show();
     }
 
     @SuppressLint("NonConstantResourceId")

@@ -18,6 +18,13 @@
     <string name="textCitySettingsView">Select Your City</string>
     <string name="buttonDarkText">Change to Dark Theme</string>
     <string name="buttonLightText">Change to Light Theme</string>
+    <string name="textWindSpeedToday">Wind (m/s):" "</string>
+    <string name="textAirPressureToday">AirPressure (mmhg):" "</string>
+    <string name="textAirPressureTodayLand">"AirPressure\n(mmhg): "</string>
+    <string name="windSpeedToday" translatable="false">2</string>
+    <string name="airPressureToday" translatable="false">747</string>
+    <string name="windSpeedTomorrow" translatable="false">5</string>
+    <string name="airPressureTomorrow" translatable="false">753</string>
     <string-array name="city_array">
         <item>New York</item>
         <item>Moscow</item>

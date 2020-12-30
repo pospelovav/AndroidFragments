@@ -14,7 +14,7 @@
         android:text="@string/city"
         android:textAllCaps="true"
         android:textColor="@color/colorCityView"
-        android:textSize="42sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:text="@string/todayDate"
         android:textColor="@color/colorTextTodayDateView"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textTodayView"
         app:layout_constraintTop_toBottomOf="@+id/textTodayView" />
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="@string/tomorrow"
         android:textColor="@color/colorTextTomorrowView"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textTempTomorrowView"
         app:layout_constraintTop_toTopOf="@+id/textTodayView" />
@@ -59,7 +59,7 @@
         android:layout_marginStart="16dp"
         android:text="@string/degrees"
         android:textColor="@color/colorTextTempTodayView"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:text="@string/today"
         android:textColor="@color/colorTextTodayView"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textTempTodayView"
         app:layout_constraintTop_toBottomOf="@+id/cityView" />
@@ -92,7 +92,7 @@
         android:layout_marginStart="20dp"
         android:text="@string/degrees"
         android:textColor="@color/colorTextTempTomorrowView"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:text="@string/tomorrowDate"
         android:textColor="@color/colorTextTomorrowDateView"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="@+id/textTomorrowView"
@@ -122,5 +122,84 @@
         app:iconTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewWindSpeedToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/textWindSpeedToday"
+        app:layout_constraintStart_toStartOf="@+id/textTempTodayView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textViewAirPressureToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/textAirPressureTodayLand"
+        app:layout_constraintStart_toStartOf="@+id/textViewWindSpeedToday"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWindSpeedToday" />
+
+    <TextView
+        android:id="@+id/windSpeedTodayView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/windSpeedToday"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewWindSpeedToday"
+        app:layout_constraintStart_toEndOf="@+id/textViewWindSpeedToday"
+        app:layout_constraintTop_toTopOf="@+id/textViewWindSpeedToday" />
+
+    <TextView
+        android:id="@+id/airPressureTodayView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/airPressureToday"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewAirPressureToday"
+        app:layout_constraintStart_toEndOf="@+id/textViewAirPressureToday"
+        app:layout_constraintTop_toTopOf="@+id/textViewAirPressureToday" />
+
+    <TextView
+        android:id="@+id/textViewWindSpeedTomorrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textWindSpeedToday"
+        app:layout_constraintStart_toStartOf="@+id/textTempTomorrowView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textViewAirPressureTomorrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/textAirPressureTodayLand"
+        app:layout_constraintStart_toStartOf="@+id/textViewWindSpeedTomorrow"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWindSpeedTomorrow" />
+
+    <TextView
+        android:id="@+id/windSpeedTomorrowView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/windSpeedTomorrow"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewWindSpeedTomorrow"
+        app:layout_constraintStart_toEndOf="@+id/textViewWindSpeedTomorrow"
+        app:layout_constraintTop_toTopOf="@+id/textViewWindSpeedTomorrow" />
+
+    <TextView
+        android:id="@+id/airPressureTomorrowView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/airPressureTomorrow"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewAirPressureTomorrow"
+        app:layout_constraintStart_toEndOf="@+id/textViewAirPressureTomorrow"
+        app:layout_constraintTop_toTopOf="@+id/textViewAirPressureTomorrow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

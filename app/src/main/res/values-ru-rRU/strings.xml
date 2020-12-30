@@ -16,6 +16,9 @@
     <string name="textCitySettingsView">Выберите Ваш город</string>
     <string name="buttonDarkText">Выбрать Темную тему</string>
     <string name="buttonLightText">Выбрать Светлую тему</string>
+    <string name="textWindSpeedToday">Ветер (м/с):" "</string>
+    <string name="textAirPressureToday">Давление (мм рт. ст.):" "</string>
+    <string name="textAirPressureTodayLand">"Давление\n(мм рт. ст.): "</string>
     <string-array name="city_array">
         <item>Нью-Йорк</item>
         <item>Москва</item>

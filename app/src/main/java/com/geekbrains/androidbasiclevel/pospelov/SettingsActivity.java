@@ -3,7 +3,6 @@ package com.geekbrains.androidbasiclevel.pospelov;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,13 +11,16 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
     private AutoCompleteTextView textView;
+    private CheckBox checkWindSpeed;
+    private CheckBox checkAtmosphericPressure;
     private static final String TAG = "SETTINGS_ACTIVITY";
+    final MainPresenter presenter = MainPresenter.getInstance();
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +29,18 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         String[] countries = getResources().getStringArray(R.array.city_array);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, countries);
         textView.setAdapter(adapter);
+        textView.setText(presenter.getCityName());
         Button btnSelect;
         btnSelect = (Button) findViewById(R.id.buttonSelect);
         btnSelect.setOnClickListener(this);
+        checkAtmosphericPressure = (CheckBox) findViewById(R.id.checkBoxAtmosphericPressure);
+        checkWindSpeed = (CheckBox) findViewById(R.id.checkBoxWindSpeed);
+        if (presenter.isCheckWindSpeed()){
+            checkWindSpeed.setChecked(true);
+        }
+        if (presenter.isCheckAtmosphericPressure()){
+            checkAtmosphericPressure.setChecked(true);
+        }
         Button btnTheme;
         btnTheme = (Button) findViewById(R.id.buttonDarkOrLight);
         if (MainActivity.theme.equals("LIGHT")){
@@ -103,10 +114,19 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(this, MainActivity.class);
+        if (this.checkWindSpeed.isChecked()){
+            presenter.setCheckWindSpeed(true);
+        } else {
+            presenter.setCheckWindSpeed(false);
+        }
+        if (this.checkAtmosphericPressure.isChecked()){
+            presenter.setCheckAtmosphericPressure(true);
+        } else {
+            presenter.setCheckAtmosphericPressure(false);
+        }
         switch (v.getId()) {
             case R.id.buttonSelect:
-                String cityName = this.textView.getText().toString();
-                intent.putExtra("city", cityName);
+                presenter.setCityName(this.textView.getText().toString());
                 startActivity(intent);
                 break;
             case R.id.buttonDarkOrLight:

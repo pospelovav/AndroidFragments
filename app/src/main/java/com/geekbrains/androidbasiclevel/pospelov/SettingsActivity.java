@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
     private AutoCompleteTextView textView;
+    private static final String TAG = "SETTINGS_ACTIVITY";
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -39,54 +41,62 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
         String instanceState;
         if (savedInstanceState == null){
-            instanceState = "Fist start SettingsActivity";
+            instanceState = "Fist start " + TAG;
         }
         else{
-            instanceState = "Restart SettingsActivity";
+            instanceState = "Restart " + TAG;
         }
-        Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_LONG).show();
+        Log.d(TAG, instanceState + " - onCreate()");
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Toast.makeText(getApplicationContext(), "SettingsActivity onRestoreInstanceState()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), TAG + " onRestoreInstanceState()", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "onRestoreInstanceState()");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Toast.makeText(getApplicationContext(), "SettingsActivity onStop()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), TAG + " onStop()", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "onStop()");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(getApplicationContext(), "SettingsActivity onResume()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), TAG + " onResume()", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "onResume()");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Toast.makeText(getApplicationContext(), "SettingsActivity onPause()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), TAG + " onPause()", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "onPause()");
     }
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        Toast.makeText(getApplicationContext(), "SettingsActivity onSaveInstanceState()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), TAG + " onSaveInstanceState()", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "onSaveInstanceState()");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Toast.makeText(getApplicationContext(), "SettingsActivity onRestart()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), TAG + " onRestart()", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "onRestart()");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(getApplicationContext(), "SettingsActivity onDestroy()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), TAG + " onDestroy()", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "onDestroy()");
     }
 
     @SuppressLint("NonConstantResourceId")

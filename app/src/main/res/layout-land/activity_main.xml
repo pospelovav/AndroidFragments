@@ -111,17 +111,17 @@
         app:layout_constraintStart_toStartOf="@+id/textTomorrowView"
         app:layout_constraintTop_toBottomOf="@+id/textTomorrowView" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonSettings"
-        style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
         android:onClick="onClick"
         android:textAlignment="viewStart"
-        app:icon="@drawable/gear_icon"
         app:iconTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gear_icon" />
 
     <TextView
         android:id="@+id/textViewWindSpeedToday"
@@ -201,5 +201,15 @@
         app:layout_constraintBottom_toBottomOf="@+id/textViewAirPressureTomorrow"
         app:layout_constraintStart_toEndOf="@+id/textViewAirPressureTomorrow"
         app:layout_constraintTop_toTopOf="@+id/textViewAirPressureTomorrow" />
+
+    <ImageButton
+        android:id="@+id/imageButtonInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/cityView"
+        app:layout_constraintStart_toEndOf="@+id/cityView"
+        app:layout_constraintTop_toTopOf="@+id/cityView"
+        app:srcCompat="@drawable/info_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

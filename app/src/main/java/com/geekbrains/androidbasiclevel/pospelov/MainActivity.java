@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import java.util.GregorianCalendar;
 public class MainActivity extends AppCompatActivity implements OnClickListener {
     public static String theme = "LIGHT";
     private static final String TAG = "MAIN_ACTIVITY";
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +45,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         today.roll(Calendar.DAY_OF_MONTH, +1);
         textTomorrowDate.setText(df.format(today.getTime()));
 
-        Button btnSettings;
-        btnSettings = (Button) findViewById(R.id.buttonSettings);
+        ImageButton btnSettings;
+        btnSettings = (ImageButton) findViewById(R.id.buttonSettings);
         btnSettings.setOnClickListener(this);
+        ImageButton btnInfo;
+        btnInfo = (ImageButton) findViewById(R.id.imageButtonInfo);
+        btnInfo.setOnClickListener(this);
 
         final TextView textViewCity = findViewById(R.id.cityView);
         final TextView textViewWindSpeedToday = findViewById(R.id.textViewWindSpeedToday);
@@ -160,6 +165,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             case R.id.buttonSettings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.imageButtonInfo:
+                final TextView textViewCity = findViewById(R.id.cityView);
+                String url = "https://yandex.ru/search/?text=" + textViewCity.getText().toString();
+                Uri uri = Uri.parse(url);
+                Intent browser = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(browser);
                 break;
             default:
                 break;

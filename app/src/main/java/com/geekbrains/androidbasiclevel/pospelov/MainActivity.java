@@ -163,8 +163,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buttonSettings:
-                Intent intent = new Intent(this, SettingsActivity.class);
-                startActivity(intent);
+                Intent intentSettingsActivity = new Intent(this, SettingsActivity.class);
+                startActivity(intentSettingsActivity);
                 break;
             case R.id.imageButtonInfo:
                 final TextView textViewCity = findViewById(R.id.cityView);

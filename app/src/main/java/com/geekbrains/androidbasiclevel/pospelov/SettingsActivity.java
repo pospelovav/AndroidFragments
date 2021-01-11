@@ -113,7 +113,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intentMainActivity = new Intent(this, MainActivity.class);
         if (this.checkWindSpeed.isChecked()){
             presenter.setCheckWindSpeed(true);
         } else {
@@ -127,7 +127,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.buttonSelect:
                 presenter.setCityName(this.textView.getText().toString());
-                startActivity(intent);
+                startActivity(intentMainActivity);
                 break;
             case R.id.buttonDarkOrLight:
                 if (MainActivity.theme.equals("DARK")){

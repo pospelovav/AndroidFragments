@@ -1,6 +1,7 @@
 package com.geekbrains.androidbasiclevel.pospelov;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import android.annotation.SuppressLint;
@@ -21,6 +22,8 @@ import java.util.GregorianCalendar;
 public class MainActivity extends AppCompatActivity implements OnClickListener {
     public static String theme = "LIGHT";
     private static final String TAG = "MAIN_ACTIVITY";
+    TextView textViewCity;
+    private final int settingsActivityRequestCode = 1234;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         btnInfo = (ImageButton) findViewById(R.id.imageButtonInfo);
         btnInfo.setOnClickListener(this);
 
-        final TextView textViewCity = findViewById(R.id.cityView);
+        textViewCity = (TextView) findViewById(R.id.cityView);
         final TextView textViewWindSpeedToday = findViewById(R.id.textViewWindSpeedToday);
         final TextView windSpeedTodayView = findViewById(R.id.windSpeedTodayView);
         final TextView textViewAirPressureToday = findViewById(R.id.textViewAirPressureToday);
@@ -109,6 +112,40 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     }
 
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.buttonSettings:
+                Intent intentSettingsActivity = new Intent(this, SettingsActivity.class);    //вызов SettingsActivity с ожиданием результата
+                startActivityForResult(intentSettingsActivity, settingsActivityRequestCode);
+                break;
+            case R.id.imageButtonInfo:                                         //открытие браузера с поиском информации по городу в Яндексе
+                final TextView textViewCity = findViewById(R.id.cityView);
+                String url = "https://yandex.ru/search/?text=" + textViewCity.getText().toString();
+                Uri uri = Uri.parse(url);
+                Intent browser = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(browser);
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent dataFromSettingsActivity) {   //обработка результата из SettingsActivity
+        if(requestCode == settingsActivityRequestCode && resultCode == RESULT_OK) {
+            String cityNameFromSettings;
+            if (dataFromSettingsActivity != null) {
+                cityNameFromSettings = dataFromSettingsActivity.getStringExtra("cityName");
+                if (!cityNameFromSettings.equals("")) {  //если пользователь не ввел город
+                    textViewCity.setText(cityNameFromSettings);
+                }
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, dataFromSettingsActivity);
+    }
+
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -158,23 +195,4 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         Log.d(TAG, "onDestroy()");
     }
 
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.buttonSettings:
-                Intent intentSettingsActivity = new Intent(this, SettingsActivity.class);
-                startActivity(intentSettingsActivity);
-                break;
-            case R.id.imageButtonInfo:
-                final TextView textViewCity = findViewById(R.id.cityView);
-                String url = "https://yandex.ru/search/?text=" + textViewCity.getText().toString();
-                Uri uri = Uri.parse(url);
-                Intent browser = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(browser);
-                break;
-            default:
-                break;
-        }
-    }
 }

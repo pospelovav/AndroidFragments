@@ -10,7 +10,6 @@ public final class MainPresenter {
     private int degreesTomorrow;
 
     private MainPresenter(){
-        cityName = null;
         degreesToday = -5;   //для теста
         degreesTomorrow = 2;
     }

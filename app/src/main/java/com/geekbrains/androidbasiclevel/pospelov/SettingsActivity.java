@@ -29,7 +29,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         String[] countries = getResources().getStringArray(R.array.city_array);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, countries);
         textView.setAdapter(adapter);
-        textView.setText(presenter.getCityName());
+
         Button btnSelect;
         btnSelect = (Button) findViewById(R.id.buttonSelect);
         btnSelect.setOnClickListener(this);
@@ -59,6 +59,44 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         }
         Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_LONG).show();
         Log.d(TAG, instanceState + " - onCreate()");
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public void onClick(View v) {
+        if (this.checkWindSpeed.isChecked()){
+            presenter.setCheckWindSpeed(true);
+        } else {
+            presenter.setCheckWindSpeed(false);
+        }
+        if (this.checkAtmosphericPressure.isChecked()){
+            presenter.setCheckAtmosphericPressure(true);
+        } else {
+            presenter.setCheckAtmosphericPressure(false);
+        }
+        switch (v.getId()) {
+            case R.id.buttonSelect:
+                Intent intentMainActivity = new Intent();
+                String cityName = this.textView.getText().toString();       //передача введенного пользователем города в MainActivity
+                intentMainActivity.putExtra("cityName", cityName);
+                setResult(RESULT_OK, intentMainActivity);
+                presenter.setCityName(cityName);   //для сохранения города при переключении на дневную/ночную тему
+                finish();
+                break;
+            case R.id.buttonDarkOrLight:                    //смена темы приложения
+                if (MainActivity.theme.equals("DARK")){
+                    MainActivity.theme = "LIGHT";
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    recreate();
+                } else if (MainActivity.theme.equals("LIGHT")){
+                    MainActivity.theme = "DARK";
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    recreate();
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
@@ -108,41 +146,6 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         super.onDestroy();
         Toast.makeText(getApplicationContext(), TAG + " onDestroy()", Toast.LENGTH_LONG).show();
         Log.d(TAG, "onDestroy()");
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View v) {
-        Intent intentMainActivity = new Intent(this, MainActivity.class);
-        if (this.checkWindSpeed.isChecked()){
-            presenter.setCheckWindSpeed(true);
-        } else {
-            presenter.setCheckWindSpeed(false);
-        }
-        if (this.checkAtmosphericPressure.isChecked()){
-            presenter.setCheckAtmosphericPressure(true);
-        } else {
-            presenter.setCheckAtmosphericPressure(false);
-        }
-        switch (v.getId()) {
-            case R.id.buttonSelect:
-                presenter.setCityName(this.textView.getText().toString());
-                startActivity(intentMainActivity);
-                break;
-            case R.id.buttonDarkOrLight:
-                if (MainActivity.theme.equals("DARK")){
-                    MainActivity.theme = "LIGHT";
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    recreate();
-                } else if (MainActivity.theme.equals("LIGHT")){
-                    MainActivity.theme = "DARK";
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    recreate();
-                }
-                break;
-            default:
-                break;
-        }
     }
 
 }

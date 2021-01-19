@@ -1,22 +1,13 @@
 package com.geekbrains.androidbasiclevel.pospelov;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.content.res.TypedArray;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -38,18 +29,13 @@ public class CoatOfWeatherFragment extends Fragment {
     MainPresenter presenter = MainPresenter.getInstance();
 
     static CoatOfWeatherFragment create(CoatContainer container) {
-        CoatOfWeatherFragment fragment = new CoatOfWeatherFragment();    // создание
-
-
-        // Передача параметра
+        CoatOfWeatherFragment fragment = new CoatOfWeatherFragment();
         Bundle args = new Bundle();
         args.putSerializable("index", container);
-
         fragment.setArguments(args);
         return fragment;
     }
 
-    // Получить индекс из списка (фактически из параметра)
     int getIndex() {
         CoatContainer coatContainer = (CoatContainer) (getArguments()).getSerializable("index");
 
@@ -69,8 +55,6 @@ public class CoatOfWeatherFragment extends Fragment {
             return "";
         }
     }
-
-
 
     @Override
     @SuppressLint("Recycle")
@@ -125,64 +109,6 @@ public class CoatOfWeatherFragment extends Fragment {
             textViewAirPressureTomorrow.setVisibility(View.GONE);
             airPressureTomorrowView.setVisibility(View.GONE);
         }
-//        ImageButton btnInfo;
-//        btnInfo = layout.findViewById(R.id.imageButtonInfo);
-//        btnInfo.setOnClickListener(this);
-
-//        LinearLayout layout = new LinearLayout(getContext());
-//        layout.setOrientation(LinearLayout.VERTICAL);
-//        layout.removeAllViews();
-
-//        String cityName = getCityName();
-//        TextView cityNameTextView = new TextView(getContext());
-//        cityNameTextView.setText(cityName);
-//        layout.addView(cityNameTextView);
-
-//        TextView textViewCity = container.findViewById(R.id.cityView);
-//        textViewCity.setText("DSDASDSDASDASD");
-
-
-
-//        TextView textViewCity = layout.findViewById(R.id.cityView);
-//        textViewCity.setText("DSDASDSDASDASD");
-//        TextView textViewCity = layout.findViewById(R.id.cityView);
-
-////        textViewCity.setText("DSDASDSDASDASD");
-
-
-//        // Определить какой герб надо показать, и показать его
-//        ImageView coatOfArms = new ImageView(getActivity());
-//
-//        // Получить из ресурсов массив указателей на изображения гербов
-//        TypedArray images = getResources().obtainTypedArray(R.array.coatofarms_imgs);
-//        // Выбрать по индексу подходящий
-//        coatOfArms.setImageResource(images.getResourceId(getIndex(), -1));
-
-//        TextView test = new TextView(getActivity());
-//        TypedArray i = getResources().obtainTypedArray(R.array.weather_array);
-//        test.setText(i.getResourceId(getIndex(), -1));
-
-        //layout.addView(test);
-//        layout.addView(coatOfArms);
-
         return layout;
     }
-
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.imageButtonInfo:                                         //открытие браузера с поиском информации по городу в Яндексе
-//                final TextView textViewCity = findViewById(R.id.cityView);
-//                String url = "https://yandex.ru/search/?text=" + textViewCity.getText().toString();
-//                Uri uri = Uri.parse(url);
-//                Intent browser = new Intent(Intent.ACTION_VIEW, uri);
-//                startActivity(browser);
-//                break;
-//
-//
-//            default:
-//                break;
-//        }
-//    }
-
 }

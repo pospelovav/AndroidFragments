@@ -6,74 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
-    <TextView
-        android:id="@+id/textSettingsActivityView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings_activity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/buttonSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="@string/button_select"
-        app:layout_constraintEnd_toEndOf="@+id/textChangeCityView"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/textChangeCityView"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDarkOrLight" />
-
-    <CheckBox
-        android:id="@+id/checkBoxAtmosphericPressure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/checkbox_atmospheric_pressure"
-        app:layout_constraintEnd_toEndOf="@+id/textChangeCityView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textChangeCityView"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxWindSpeed" />
-
-    <AutoCompleteTextView
-        android:id="@+id/textChangeCityView"
-        android:layout_width="220dp"
-        android:layout_height="65dp"
-        android:completionThreshold="1"
-        app:layout_constraintEnd_toEndOf="@+id/textCitySettingsView"
-        app:layout_constraintStart_toStartOf="@+id/textCitySettingsView"
-        app:layout_constraintTop_toBottomOf="@+id/textCitySettingsView"
-        tools:ignore="LabelFor" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAtmosphericPressure" />
 
     <CheckBox
         android:id="@+id/checkBoxWindSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/checkbox_wind_speed"
-        app:layout_constraintEnd_toEndOf="@+id/textChangeCityView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textChangeCityView"
-        app:layout_constraintTop_toBottomOf="@+id/textChangeCityView" />
-
-    <TextView
-        android:id="@+id/textCitySettingsView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/textCitySettingsView"
-        app:layout_constraintEnd_toEndOf="@+id/textSettingsActivityView"
-        app:layout_constraintStart_toStartOf="@+id/textSettingsActivityView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textSettingsActivityView" />
 
-    <Button
-        android:id="@+id/buttonDarkOrLight"
+
+    <!--    <Button-->
+    <!--        android:id="@+id/buttonDarkOrLight"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/buttonDarkText"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/checkBoxWindSpeed"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/checkBoxWindSpeed"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/checkBoxAtmosphericPressure" />-->
+
+    <TextView
+        android:id="@+id/textSettingsActivityView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/buttonDarkText"
-        app:layout_constraintEnd_toEndOf="@+id/textChangeCityView"
-        app:layout_constraintStart_toStartOf="@+id/textChangeCityView"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxAtmosphericPressure" />
+        android:text="@string/settings_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAtmosphericPressure"
+        android:layout_width="176dp"
+        android:layout_height="56dp"
+        android:text="@string/checkbox_atmospheric_pressure"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxWindSpeed" />
+
+    <!--    <AutoCompleteTextView-->
+    <!--        android:id="@+id/textChangeCityView"-->
+    <!--        android:layout_width="220dp"-->
+    <!--        android:layout_height="65dp"-->
+    <!--        android:completionThreshold="1"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/textCitySettingsView"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/textCitySettingsView"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textCitySettingsView"-->
+    <!--        tools:ignore="LabelFor" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

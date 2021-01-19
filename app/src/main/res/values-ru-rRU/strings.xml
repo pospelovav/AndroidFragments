@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AndroidBasicLevel</string>
+    <string name="app_name">Погода в городе</string>
     <string name="city">Балашиха</string>
     <string name="today">Сегодня</string>
     <string name="degrees">градусы</string>
@@ -13,7 +13,6 @@
     <string name="button_select">ВЫБРАТЬ</string>
     <string name="checkbox_wind_speed">Скорость Ветра</string>
     <string name="checkbox_atmospheric_pressure">Атмосферное давление</string>
-    <string name="textCitySettingsView">Выберите Ваш город</string>
     <string name="buttonDarkText">Выбрать Темную тему</string>
     <string name="buttonLightText">Выбрать Светлую тему</string>
     <string name="textWindSpeedToday">Ветер (м/с):" "</string>
